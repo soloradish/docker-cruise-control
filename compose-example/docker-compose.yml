@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  cruise-control:
+    image: lowid/cruise-control
+    volumes:
+      - type: bind
+        source: ./configs/cruisecontrol.properties
+        target: /opt/cruise-control/config/cruisecontrol.properties
+    ports:
+      - "8090:8090"
