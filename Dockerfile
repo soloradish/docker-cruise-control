@@ -34,6 +34,7 @@ COPY --from=0 /cruise-control/config /opt/cruise-control/config
 COPY --from=0 /cruise-control/kafka-cruise-control-start.sh /opt/cruise-control/
 COPY --from=0 /cruise-control/cruise-control/build/dependant-libs /opt/cruise-control/cruise-control/build/dependant-libs
 COPY opt/cruise-control /opt/cruise-control/
+RUN chmod 777 -R /opt/cruise-control/
 COPY --from=1 /src/cruise-control-ui/dist /opt/cruise-control/cruise-control-ui/dist
 RUN echo "local,localhost,/kafkacruisecontrol" > /opt/cruise-control/cruise-control-ui/dist/static/config.csv
 
