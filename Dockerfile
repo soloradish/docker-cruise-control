@@ -1,4 +1,5 @@
-FROM adoptopenjdk/openjdk11:jdk-11.0.6_10-slim
+FROM adoptopenjdk/openjdk8:slim
+
 ARG VERSION=kafka_0_11_and_1_0
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates
